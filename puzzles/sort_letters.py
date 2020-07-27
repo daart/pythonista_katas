@@ -35,15 +35,9 @@ def sort_letters(text):
         for char, freq in frequency_by_char.items()
     ]
     
-    return ''.join([(char * freq) for freq, index, char in sorted(triplets, reverse=True)])
-    
+    return ''.join([(char * freq) for freq, index, char in sorted(triplets, reverse=True)])    
     # since sorting is the heavies operation here O(n logn)
-    
-    # super pythonista solution only for python v 3.6+ :)
-    
-    # char_collection = Counter(text).most_common()
-    
-    # return ''.join([key * val for key, val in char_collection])
+
 
 def sort_letters_2(text):
     """
