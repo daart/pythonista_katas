@@ -54,16 +54,19 @@ def main(board, word):
     False
     >>> main([['A','B','C','E'],['S','F','C','S'],['A','D','E','E']], "ABCB")
     False
+    >>> main([["C","A","A"],["A","A","A"],["B","C","D"]], "AAB")
+    True
     """
-
-    res = False
 
     for r in range(len(board)):
         for c in range(len(board[0])):
             if word[0] == board[r][c] and search(board, word, 0, r, c):
-                res = True
+                return True
 
-    return res
+    return False
+
+
+board1 = [['A', 'B', 'C', 'E'], ['S', 'F', 'C', 'S'], ['A', 'D', 'E', 'E']]
 
 
 if __name__ == "__main__":
