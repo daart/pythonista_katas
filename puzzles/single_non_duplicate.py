@@ -198,7 +198,6 @@ s13 = [
 ]
 
 test1 = singleNonDuplicate(s13)
-test2 = splitter([1, 1, 2], 0, 2)
 test3 = splitter(s12, 0, 6)
 print(test1)  # 9985
 print(test3) # 10
