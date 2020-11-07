@@ -8,6 +8,12 @@ def main(numbers):
     Given a sequence of integers. Build a new sequence of the same length. Each element of a new
     sequence should be calculated as a multiplication of elements of the original sequence except
     the element with the same index.  Think about possible corner cases.
+    
+    Possible corner cases:
+    1) if integer is 0
+    2) if integer is < 0
+    3) if multiplication result is > Integer.MAX_VALUE
+    
     >>> main([1, 5, 3])
     [15, 3, 5]
     >>> main([1, 2, 2, 5, 8])
