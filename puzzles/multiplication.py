@@ -25,9 +25,17 @@ def main(numbers):
     [160, 0, 0, 0, 0]
     >>> main([1, 2, 0, 5, 0])
     [0, 0, 0, 0, 0]
+    >>> main([1, 2, -2, 5, 4])
+    [-80, -40, 40, -16, -20]
+    >>> main([1, 1])
+    [1, 1]
+    >>> main([])
+    []
     """
     
     counter = Counter(numbers)
+    if len(numbers) == 0:
+        return numbers
     if counter[0] > 1:
         return [0] * len(numbers)
     if counter[0] == 1:
