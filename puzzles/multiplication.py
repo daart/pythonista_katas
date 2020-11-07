@@ -1,4 +1,5 @@
 from functools import reduce
+from collections import Counter
 
 def multiplier(a, b):
     return a * b
@@ -18,7 +19,21 @@ def main(numbers):
     [15, 3, 5]
     >>> main([1, 2, 2, 5, 8])
     [160, 80, 80, 32, 20]
+    >>> main([1, 2, 5, 0, 8])
+    [0, 0, 0, 80, 0]
+    >>> main([0, 2, 5, 2, 8])
+    [160, 0, 0, 0, 0]
+    >>> main([1, 2, 0, 5, 0])
+    [0, 0, 0, 0, 0]
     """
+    # >>> main([1, 2, 0, 5, 8])
+    # [0, 0, 80, 0, 0]
+    counter = Counter(numbers)
+    if counter[0] > 1:
+        return [0] * len(numbers)
+    if counter[0] == 1:
+        zero_index = numbers.index(0)  
+        return [0] * zero_index + [reduce(multiplier, numbers[: zero_index] + numbers[zero_index + 1: ])] + [0] * (len(numbers) - zero_index - 1)
     total = reduce(multiplier, numbers)
         
     return [total // val for val in numbers ]
