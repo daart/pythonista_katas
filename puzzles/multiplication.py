@@ -26,8 +26,7 @@ def main(numbers):
     >>> main([1, 2, 0, 5, 0])
     [0, 0, 0, 0, 0]
     """
-    # >>> main([1, 2, 0, 5, 8])
-    # [0, 0, 80, 0, 0]
+    
     counter = Counter(numbers)
     if counter[0] > 1:
         return [0] * len(numbers)
