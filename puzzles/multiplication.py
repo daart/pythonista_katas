@@ -33,7 +33,9 @@ def main(numbers):
     []
     """
     
+    # TODO: instead of counter use .count()
     counter = Counter(numbers)
+    
     if len(numbers) == 0:
         return numbers
     if counter[0] > 1:
